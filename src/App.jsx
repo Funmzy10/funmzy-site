@@ -243,13 +243,13 @@ function Hero() {
           Frontend Developer, Marketer &amp; AI Video Content Creator
         </p>
 
-        <h1 className="font-extrabold text-white leading-[1.08] mb-6"
-          style={{ fontSize: 'clamp(2.5rem, 7.5vw, 5.2rem)', letterSpacing: '-0.025em' }}>
-          I Build for{' '}
+        <h1 className="font-extrabold text-white leading-[1.12] mb-6"
+          style={{ fontSize: 'clamp(1.9rem, 5.2vw, 3.6rem)', letterSpacing: '-0.025em' }}>
+          I build for crypto projects and local businesses.
+          <br />
           <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
-            Crypto Projects.
+            Fast, reliable and Unmissable.
           </span>
-          <br />Fast. Reliable. Unmissable.
         </h1>
 
         <p className="text-slate-300 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-3">
