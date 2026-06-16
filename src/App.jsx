@@ -247,9 +247,9 @@ function Hero() {
           style={{ fontSize: 'clamp(2.5rem, 7.5vw, 5.2rem)', letterSpacing: '-0.025em' }}>
           I Build for{' '}
           <span className="bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400 bg-clip-text text-transparent">
-            Web3.
+            Crypto Projects.
           </span>
-          <br />Fast. Precise. Unmissable.
+          <br />Fast. Reliable. Unmissable.
         </h1>
 
         <p className="text-slate-300 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-3">
