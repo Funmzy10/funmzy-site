@@ -240,7 +240,7 @@ function Hero() {
         </div>
 
         <p className="text-slate-400 font-semibold uppercase tracking-widest text-xs mb-4">
-          Web3 Frontend Developer &amp; Growth Operator
+          Frontend Developer, Marketer &amp; AI Video Content Creator
         </p>
 
         <h1 className="font-extrabold text-white leading-[1.08] mb-6"
@@ -253,10 +253,10 @@ function Hero() {
         </h1>
 
         <p className="text-slate-300 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-3">
-          As a Web3 frontend developer, I engineer launch-ready landing pages — fully deployed, wallet-connected, and DexScreener-ready — for Solana, Base, and EVM token projects.
+          As a frontend developer, marketer, and AI video content creator, I build launch-ready websites, run Web3 marketing campaigns, and produce AI avatar videos. For crypto projects and local businesses.
         </p>
         <p className="text-slate-500 text-base max-w-lg mx-auto mb-10">
-          Plus AI avatar videos and memecoin growth systems. Zero to live in under 24 hours.
+          Solana, Base, EVM and beyond. Zero to live in under 24 hours.
         </p>
 
         {/* CTAs */}
@@ -310,10 +310,10 @@ function Hero() {
 const SERVICES = [
   {
     Icon: IconGlobe,
-    title: 'Web3 Frontend Developer for Hire',
+    title: 'Frontend Developer',
     outcome: 'Launch-ready pages. Live before the next candle.',
-    description: 'I engineer fully deployed, wallet-connected landing pages — DexScreener-ready with tokenomics, roadmap, and email capture — handed over in under 24 hours. No template. No handoff.',
-    badge: 'From $100 · Delivered in 24hrs',
+    description: 'I build fully deployed, wallet-connected landing pages — DexScreener-ready with tokenomics, roadmap, and email capture — handed over fast. No template. No handoff.',
+    badge: 'From $100 · Delivered in less than 72hrs',
     terminalCta: '[ Deploy Frontend Module ]',
     grad: 'from-blue-500 to-cyan-500',
     glow: 'rgba(59,130,246,0.22)',
@@ -330,11 +330,11 @@ const SERVICES = [
   },
   {
     Icon: IconChart,
-    title: 'Memecoin Growth Systems',
+    title: 'Web3 Marketing & Growth',
     outcome: 'Real reach that actually moves the chart.',
-    description: 'Direct connections to CT callers, alpha groups, and tier-1 influencers. Systematic distribution built around your launch liquidity window — not guesswork.',
-    badge: 'From $2,000 · Results in 3 days',
-    terminalCta: '[ Launch Growth Campaign ]',
+    description: 'Full-stack Web3 marketing: CT caller campaigns, alpha group drops, influencer placements, and memecoin growth systems. Built around your launch window and token narrative.',
+    badge: 'From $2,000 · Delivered in 3 days',
+    terminalCta: '[ Launch Marketing Campaign ]',
     grad: 'from-pink-500 to-rose-600',
     glow: 'rgba(236,72,153,0.22)',
   },
@@ -439,13 +439,13 @@ const CASES = [
     tech: ['React', 'Vite', 'Tailwind CSS'],
   },
   {
-    tag: 'Growth Campaign',
+    tag: 'Marketing & Growth Campaign',
     tagStyle: { background: 'rgba(124,58,237,0.12)', color: '#a78bfa', borderColor: 'rgba(124,58,237,0.2)' },
     title: 'Memecoin — Solana Launch',
     problem: 'Dev team needed chart movement and community volume at launch with zero existing audience.',
     solution: 'Coordinated CT caller campaign, alpha group drops, and influencer placements across 3 tiers.',
     result: 'Token market cap scaled from $500K baseline to $6M peak within 72 hours of campaign activation.',
-    metrics: [{ val: '$6M', label: 'MC peak reached' }, { val: '72hrs', label: 'Campaign window' }],
+    metrics: [{ val: '$6M', label: 'MC peak reached' }, { val: '6 months', label: 'of activation' }],
     link: null,
     linkLabel: null,
     tech: ['CT Callers', 'Alpha Groups', 'Influencer Network'],
@@ -453,14 +453,14 @@ const CASES = [
   {
     tag: 'AI Video',
     tagStyle: { background: 'rgba(37,99,235,0.12)', color: '#60a5fa', borderColor: 'rgba(37,99,235,0.2)' },
-    title: 'AI Avatar Brand Campaign',
+    title: 'AI Video Content Creation',
     problem: 'Crypto project needed viral content to drive community engagement without a video team.',
-    solution: '60-second AI avatar video with scripted hook, project narrative, and CTA — full HeyGen pipeline.',
-    result: 'Video shared organically across CT and Telegram. 3x community Telegram growth within a week.',
+    solution: '30-60 second AI avatar video with scripted hook, project narrative, and CTA.',
+    result: 'Video shared organically across CT, TikTok, Instagram, YouTube and Telegram. 3x community Telegram growth within a week.',
     metrics: [{ val: '3×', label: 'Community growth' }, { val: '60sec', label: 'Viral format' }],
     link: null,
     linkLabel: null,
-    tech: ['HeyGen', 'AI Script', 'CT Distribution'],
+    tech: ['AI Script', 'CT Distribution', 'Multi-Platform'],
   },
 ]
 
@@ -537,9 +537,9 @@ function Work() {
 ───────────────────────────────────────── */
 const TESTIMONIALS = [
   {
-    quote: 'Funmzy built and deployed our token landing page from scratch. Clean, fast, exactly what the project needed.',
-    author: 'GDK Dev',
-    role: '$GDK Token Project',
+    quote: 'Funmzy gave good ideas that helped 10X our marketing strategy and made us good profits.',
+    author: 'GDK Marketer',
+    role: 'Marketing',
     stars: 5,
   },
   {
@@ -549,9 +549,9 @@ const TESTIMONIALS = [
     stars: 5,
   },
   {
-    quote: 'Handled our full Web3 frontend and growth coordination. Doubt token wouldn\'t have launched as cleanly without him.',
-    author: 'DoubtToken Dev',
-    role: '$Doubt Project',
+    quote: 'Funmzy worked in the growth coordination. He made good impact and contributions with good ideas to actual help us grow.',
+    author: 'Doubttoken Project Manager',
+    role: 'Growth Campaign',
     stars: 5,
   },
 ]
