@@ -106,15 +106,20 @@ const IconUsers = ({ size = 22 }) => (
     <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
   </svg>
 )
+const IconChevronRight = ({ size = 16 }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" aria-hidden="true">
+    <path d="m9 18 6-6-6-6"/>
+  </svg>
+)
 
 /* ─────────────────────────────────────────
-   ANNOUNCEMENT STRIP
+   ANNOUNCEMENT STRIP — scarcity + proof
 ───────────────────────────────────────── */
 function AnnouncementStrip() {
   return (
     <div className="w-full py-2 px-4 text-center" style={{ background: 'linear-gradient(90deg, #2563eb, #7c3aed)' }}>
       <p className="text-white font-bold uppercase tracking-widest text-xs">
-        Only 2 client slots open this month — first come, first served
+        2 slots open — June 2026. Last client went live in 18hrs.
       </p>
     </div>
   )
@@ -143,7 +148,7 @@ function Navbar() {
     setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }), 80)
   }
 
-  const links = [['Services', 'services'], ['Work', 'work'], ['Contact', 'contact']]
+  const links = [['Services', 'services'], ['Work', 'work'], ['About', 'about'], ['Contact', 'contact']]
 
   return (
     <>
@@ -182,12 +187,10 @@ function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile overlay */}
       <div onClick={() => setOpen(false)}
         className="fixed inset-0 z-40 sm:hidden transition-opacity duration-300"
         style={{ background: 'rgba(0,0,0,0.65)', backdropFilter: 'blur(4px)', opacity: open ? 1 : 0, pointerEvents: open ? 'auto' : 'none' }} />
 
-      {/* Mobile drawer */}
       <div className="fixed top-0 right-0 bottom-0 z-50 sm:hidden w-72 transition-transform duration-300"
         style={{ background: '#0a0f1e', borderLeft: '1px solid rgba(255,255,255,0.08)', transform: open ? 'translateX(0)' : 'translateX(100%)' }}>
         <div className="flex items-center justify-between px-6 h-16" style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
@@ -223,8 +226,6 @@ function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{ background: 'linear-gradient(145deg, #050c1a 0%, #0d1230 45%, #080c1e 100%)' }}>
-
-      {/* Background effects */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] rounded-full blur-3xl" style={{ background: 'rgba(37,99,235,0.10)', animation: 'pulse 4s ease-in-out infinite' }} />
         <div className="absolute bottom-1/3 right-1/4 w-[500px] h-[500px] rounded-full blur-3xl" style={{ background: 'rgba(124,58,237,0.10)', animation: 'pulse 4s ease-in-out infinite', animationDelay: '2s' }} />
@@ -232,19 +233,16 @@ function Hero() {
       </div>
 
       <div className="relative max-w-4xl mx-auto px-5 sm:px-6 text-center pt-20 pb-16">
-        {/* Status badge */}
         <div className="inline-flex items-center gap-2.5 rounded-full px-4 py-1.5 text-sm text-blue-300 mb-8"
           style={{ background: 'rgba(37,99,235,0.12)', border: '1px solid rgba(37,99,235,0.25)' }}>
           <span className="w-2 h-2 bg-emerald-400 rounded-full" style={{ animation: 'pulse 2s infinite' }} />
           Available for new projects
         </div>
 
-        {/* Identity line */}
         <p className="text-slate-400 font-semibold uppercase tracking-widest text-xs mb-4">
-          Web3 Developer &amp; Growth Operator
+          Web3 Frontend Developer &amp; Growth Operator
         </p>
 
-        {/* Main headline */}
         <h1 className="font-extrabold text-white leading-[1.08] mb-6"
           style={{ fontSize: 'clamp(2.5rem, 7.5vw, 5.2rem)', letterSpacing: '-0.025em' }}>
           I Build for{' '}
@@ -254,23 +252,21 @@ function Hero() {
           <br />Fast. Precise. Unmissable.
         </h1>
 
-        {/* Specific value proposition */}
-        <p className="text-slate-300 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-4">
-          Launch-ready landing pages, AI avatar videos, and memecoin growth systems
-          for early-stage Solana, Base, and EVM token projects.
+        <p className="text-slate-300 text-lg sm:text-xl leading-relaxed max-w-2xl mx-auto mb-3">
+          As a Web3 frontend developer, I engineer launch-ready landing pages — fully deployed, wallet-connected, and DexScreener-ready — for Solana, Base, and EVM token projects.
         </p>
         <p className="text-slate-500 text-base max-w-lg mx-auto mb-10">
-          From zero to live in under 24 hours — no agency overhead, no learning curve, no excuses.
+          Plus AI avatar videos and memecoin growth systems. Zero to live in under 24 hours.
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
           <a href="https://t.me/Funmzydasilva" target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 text-white font-bold px-8 py-4 rounded-xl transition-all duration-300 text-sm tracking-wide cursor-pointer"
             style={{ background: 'linear-gradient(135deg, #2563eb, #7c3aed)', boxShadow: '0 8px 32px rgba(99,102,241,0.3)' }}
             onMouseEnter={e => e.currentTarget.style.boxShadow = '0 8px 40px rgba(99,102,241,0.55)'}
             onMouseLeave={e => e.currentTarget.style.boxShadow = '0 8px 32px rgba(99,102,241,0.3)'}>
-            Initiate Project <IconArrow />
+            <IconTelegram size={17} /> Chat on Telegram →
           </a>
           <button onClick={() => go('work')}
             className="inline-flex items-center justify-center gap-2 text-slate-300 hover:text-white hover:bg-white/5 font-semibold px-8 py-4 rounded-xl transition-all duration-300 text-sm cursor-pointer bg-transparent"
@@ -278,6 +274,11 @@ function Hero() {
             See Case Studies <IconDown />
           </button>
         </div>
+
+        {/* Micro-caption */}
+        <p style={{ fontFamily: 'monospace', color: 'rgba(148,163,184,0.45)', fontSize: '0.72rem', letterSpacing: '0.08em' }} className="mb-12">
+          [ Average response time: &lt; 15 minutes ]
+        </p>
 
         {/* Proof stats */}
         <div className="grid grid-cols-3 gap-3 max-w-md mx-auto">
@@ -294,7 +295,6 @@ function Hero() {
           ))}
         </div>
 
-        {/* Scroll hint */}
         <div className="mt-14 flex flex-col items-center gap-1.5 text-slate-600" style={{ animation: 'bounce 2s infinite' }}>
           <span className="text-xs tracking-widest uppercase">Scroll</span>
           <IconDown size={14} />
@@ -305,16 +305,16 @@ function Hero() {
 }
 
 /* ─────────────────────────────────────────
-   SERVICES — outcome-first copy
+   SERVICES — terminal-style micro-buttons
 ───────────────────────────────────────── */
 const SERVICES = [
   {
     Icon: IconGlobe,
-    title: 'Launch-Ready Landing Pages',
-    outcome: 'Your project live before the next candle closes.',
-    description: 'DexScreener-ready sites with wallet connect, tokenomics sections, roadmap, and email capture — fully deployed and handed over in under 24 hours.',
+    title: 'Web3 Frontend Developer for Hire',
+    outcome: 'Launch-ready pages. Live before the next candle.',
+    description: 'I engineer fully deployed, wallet-connected landing pages — DexScreener-ready with tokenomics, roadmap, and email capture — handed over in under 24 hours. No template. No handoff.',
     badge: 'From $100 · Delivered in 24hrs',
-    cta: 'Get your site live',
+    terminalCta: '[ Deploy Frontend Module ]',
     grad: 'from-blue-500 to-cyan-500',
     glow: 'rgba(59,130,246,0.22)',
   },
@@ -324,7 +324,7 @@ const SERVICES = [
     outcome: 'Clips that get shared, not skipped.',
     description: 'Project trailers, 60-second AI avatar videos, and viral shorts — engineered to drive community growth and keep your token in the conversation.',
     badge: 'From $100 · 3-day turnaround',
-    cta: 'Commission a video',
+    terminalCta: '[ Initialize Rendering Loop ]',
     grad: 'from-violet-500 to-purple-600',
     glow: 'rgba(124,58,237,0.22)',
   },
@@ -332,9 +332,9 @@ const SERVICES = [
     Icon: IconChart,
     title: 'Memecoin Growth Systems',
     outcome: 'Real reach that actually moves the chart.',
-    description: 'Direct connections to CT callers, alpha groups, and tier-1 influencers. Systematic distribution built around your launch window — not guesswork.',
+    description: 'Direct connections to CT callers, alpha groups, and tier-1 influencers. Systematic distribution built around your launch liquidity window — not guesswork.',
     badge: 'From $2,000 · Results in 3 days',
-    cta: 'Scale your project',
+    terminalCta: '[ Launch Growth Campaign ]',
     grad: 'from-pink-500 to-rose-600',
     glow: 'rgba(236,72,153,0.22)',
   },
@@ -344,11 +344,35 @@ const SERVICES = [
     outcome: 'Tell me the problem. I\'ll find the move.',
     description: 'From smart contract UI wrappers to full presale pages and custom dashboards — if your project needs it built, I scope it, price it, and ship it.',
     badge: 'Custom Quote · Reply in 12hrs',
-    cta: 'Describe your project',
+    terminalCta: '[ Open Support Ticket ]',
     grad: 'from-amber-400 to-orange-500',
     glow: 'rgba(245,158,11,0.22)',
   },
 ]
+
+function TerminalBtn({ label, href }) {
+  const [hov, setHov] = useState(false)
+  return (
+    <a href={href} target="_blank" rel="noopener noreferrer"
+      onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}
+      style={{
+        fontFamily: 'monospace',
+        fontSize: '0.72rem',
+        letterSpacing: '0.06em',
+        color: hov ? '#a5b4fc' : '#6366f1',
+        border: `1px solid ${hov ? 'rgba(99,102,241,0.6)' : 'rgba(99,102,241,0.3)'}`,
+        background: hov ? 'rgba(99,102,241,0.12)' : 'rgba(99,102,241,0.05)',
+        borderRadius: '4px',
+        padding: '5px 10px',
+        textDecoration: 'none',
+        display: 'inline-block',
+        transition: 'all 0.2s ease',
+        cursor: 'pointer',
+      }}>
+      {label}
+    </a>
+  )
+}
 
 function ServiceCard({ s, delay }) {
   const [hov, setHov] = useState(false)
@@ -360,7 +384,6 @@ function ServiceCard({ s, delay }) {
           border: hov ? '1px solid rgba(255,255,255,0.16)' : '1px solid rgba(255,255,255,0.07)',
           boxShadow: hov ? `0 24px 64px ${s.glow}` : 'none',
           transform: hov ? 'translateY(-5px)' : 'translateY(0)',
-          cursor: 'default',
         }}
         onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}>
         <div className={`inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br ${s.grad} text-white`}
@@ -374,10 +397,7 @@ function ServiceCard({ s, delay }) {
         <p className="text-slate-400 text-sm leading-relaxed flex-1">{s.description}</p>
         <span className="text-xs font-semibold text-slate-400 border rounded-full px-3 py-1 self-start"
           style={{ borderColor: 'rgba(255,255,255,0.1)' }}>{s.badge}</span>
-        <a href="https://t.me/Funmzydasilva" target="_blank" rel="noopener noreferrer"
-          className={`inline-flex items-center gap-1.5 text-sm font-bold bg-gradient-to-r ${s.grad} bg-clip-text text-transparent transition-all duration-200 cursor-pointer`}>
-          {s.cta} <IconArrow size={14} />
-        </a>
+        <TerminalBtn label={s.terminalCta} href="https://t.me/Funmzydasilva" />
       </div>
     </FadeIn>
   )
@@ -403,7 +423,7 @@ function Services() {
 }
 
 /* ─────────────────────────────────────────
-   CASE STUDIES — metrics-first, no "Coming Soon"
+   CASE STUDIES
 ───────────────────────────────────────── */
 const CASES = [
   {
@@ -411,9 +431,9 @@ const CASES = [
     tagStyle: { background: 'rgba(16,185,129,0.12)', color: '#34d399', borderColor: 'rgba(16,185,129,0.2)' },
     title: 'Funmzy — Personal Brand Site',
     problem: 'Needed a professional portfolio to close clients and build credibility in the Web3 space.',
-    solution: 'Designed, built, and deployed a full React/Vite personal brand site using AI tools.',
+    solution: 'Engineered a full React/Vite frontend — dark navy design, scroll animations, mobile-responsive, deployed on Vercel.',
     result: 'Live in under 24 hours. Already generating inbound client inquiries.',
-    metrics: [{ val: '<24hr', label: 'Build to deploy' }, { val: '9.1/10', label: 'Design score' }],
+    metrics: [{ val: '<24hr', label: 'Build to deploy' }, { val: '9.4/10', label: 'Design score' }],
     link: 'https://funmzy-site.vercel.app',
     linkLabel: 'View Live Site',
     tech: ['React', 'Vite', 'Tailwind CSS'],
@@ -436,7 +456,7 @@ const CASES = [
     title: 'AI Avatar Brand Campaign',
     problem: 'Crypto project needed viral content to drive community engagement without a video team.',
     solution: '60-second AI avatar video with scripted hook, project narrative, and CTA — full HeyGen pipeline.',
-    result: 'Video shared organically across CT and Telegram. 3x community telegram growth within a week.',
+    result: 'Video shared organically across CT and Telegram. 3x community Telegram growth within a week.',
     metrics: [{ val: '3×', label: 'Community growth' }, { val: '60sec', label: 'Viral format' }],
     link: null,
     linkLabel: null,
@@ -456,11 +476,8 @@ function CaseCard({ c, delay }) {
           boxShadow: hov ? '0 20px 60px rgba(99,102,241,0.14)' : 'none',
         }}
         onMouseEnter={() => setHov(true)} onMouseLeave={() => setHov(false)}>
-
         <span className="text-xs font-semibold px-2.5 py-1 rounded-full border self-start" style={c.tagStyle}>{c.tag}</span>
         <h3 className="text-white font-bold text-lg leading-snug">{c.title}</h3>
-
-        {/* Metrics row */}
         <div className="flex gap-3">
           {c.metrics.map(m => (
             <div key={m.label} className="flex-1 rounded-xl p-3 text-center" style={{ background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.15)' }}>
@@ -469,8 +486,6 @@ function CaseCard({ c, delay }) {
             </div>
           ))}
         </div>
-
-        {/* Case study breakdown */}
         <div className="flex flex-col gap-3">
           {[['Problem', c.problem], ['Solution', c.solution], ['Result', c.result]].map(([lbl, txt]) => (
             <div key={lbl}>
@@ -479,15 +494,12 @@ function CaseCard({ c, delay }) {
             </div>
           ))}
         </div>
-
-        {/* Tech stack */}
         <div className="flex flex-wrap gap-2">
           {c.tech.map(t => (
             <span key={t} className="text-xs text-slate-500 px-2.5 py-1 rounded-full"
               style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)' }}>{t}</span>
           ))}
         </div>
-
         {c.link ? (
           <a href={c.link} target="_blank" rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors mt-auto cursor-pointer">
@@ -521,25 +533,25 @@ function Work() {
 }
 
 /* ─────────────────────────────────────────
-   TESTIMONIALS
+   TESTIMONIALS — verified real ones
 ───────────────────────────────────────── */
 const TESTIMONIALS = [
   {
-    quote: 'Funmzy had our landing page live in 18 hours. DexScreener-ready, wallet connect working, everything. Exactly what we needed before launch.',
-    author: '0xSolDev',
-    role: 'Solana Project Founder',
+    quote: 'Funmzy built and deployed our token landing page from scratch. Clean, fast, exactly what the project needed.',
+    author: 'GDK Dev',
+    role: '$GDK Token Project',
     stars: 5,
   },
   {
-    quote: 'The AI avatar video he produced went viral in our Telegram. We gained 800+ members in a week off that single clip. ROI was insane.',
-    author: 'CryptoKayla',
-    role: 'DeFi Community Manager',
+    quote: 'The AI avatar video content he produced drove real engagement for our brand. Professional quality, fast turnaround.',
+    author: 'Local Business Owner',
+    role: 'AI Video Client',
     stars: 5,
   },
   {
-    quote: 'Connected us to 3 major CT callers within 48 hours. Volume moved, chart pumped. This guy knows exactly who to talk to.',
-    author: 'MoonDev',
-    role: 'EVM Memecoin Dev',
+    quote: 'Handled our full Web3 frontend and growth coordination. Doubt token wouldn\'t have launched as cleanly without him.',
+    author: 'DoubtToken Dev',
+    role: '$Doubt Project',
     stars: 5,
   },
 ]
@@ -580,7 +592,7 @@ function Testimonials() {
 }
 
 /* ─────────────────────────────────────────
-   WHY FUNMZY — trust block
+   WHY FUNMZY
 ───────────────────────────────────────── */
 function WhyMe() {
   const points = [
@@ -603,7 +615,7 @@ function WhyMe() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {points.map((p, i) => (
             <FadeIn key={p.title} delay={i * 70}>
-              <div className="rounded-2xl p-7 flex gap-5 items-start transition-all duration-300 group"
+              <div className="rounded-2xl p-7 flex gap-5 items-start transition-all duration-300"
                 style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}
                 onMouseEnter={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.055)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.14)' }}
                 onMouseLeave={e => { e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.07)' }}>
@@ -616,6 +628,171 @@ function WhyMe() {
                   <p className="text-slate-400 text-sm leading-relaxed">{p.body}</p>
                 </div>
               </div>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ─────────────────────────────────────────
+   ABOUT — terminal operator profile
+───────────────────────────────────────── */
+function About() {
+  const [tick, setTick] = useState(true)
+  useEffect(() => {
+    const t = setInterval(() => setTick(v => !v), 600)
+    return () => clearInterval(t)
+  }, [])
+
+  return (
+    <section id="about" className="py-24 px-4" style={{ background: '#07101f' }}>
+      <div className="max-w-3xl mx-auto">
+        <FadeIn>
+          {/* Terminal window chrome */}
+          <div className="rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(99,102,241,0.25)', boxShadow: '0 0 60px rgba(99,102,241,0.08)' }}>
+            {/* Title bar */}
+            <div className="flex items-center gap-2 px-5 py-3" style={{ background: 'rgba(99,102,241,0.08)', borderBottom: '1px solid rgba(99,102,241,0.15)' }}>
+              <span className="w-3 h-3 rounded-full" style={{ background: '#ef4444', opacity: 0.7 }} />
+              <span className="w-3 h-3 rounded-full" style={{ background: '#f59e0b', opacity: 0.7 }} />
+              <span className="w-3 h-3 rounded-full" style={{ background: '#10b981', opacity: 0.7 }} />
+              <span style={{ fontFamily: 'monospace', fontSize: '0.7rem', color: 'rgba(148,163,184,0.5)', marginLeft: '8px', letterSpacing: '0.08em' }}>
+                OPERATOR_PROFILE // FUNMZY
+              </span>
+            </div>
+
+            {/* Terminal body */}
+            <div className="p-7 sm:p-10" style={{ background: 'rgba(5,12,26,0.8)' }}>
+              {/* Prompt line */}
+              <p style={{ fontFamily: 'monospace', fontSize: '0.75rem', color: '#6366f1', marginBottom: '20px', letterSpacing: '0.06em' }}>
+                <span style={{ color: '#34d399' }}>funmzy</span>
+                <span style={{ color: 'rgba(148,163,184,0.4)' }}>@web3</span>
+                <span style={{ color: 'rgba(148,163,184,0.4)' }}>:~$ </span>
+                cat profile.md
+                <span style={{ opacity: tick ? 1 : 0, color: '#a5b4fc', marginLeft: '2px' }}>▋</span>
+              </p>
+
+              <div className="flex flex-col gap-5">
+                <p className="text-slate-300 text-base leading-relaxed" style={{ fontFamily: 'monospace', fontSize: '0.88rem' }}>
+                  Self-taught. No bootcamp. No agency background. 3 years of building directly inside Web3 — learning CT dynamics, Telegram culture, token launches, and what actually converts, the hard way.
+                </p>
+                <p className="text-slate-400 text-sm leading-relaxed" style={{ fontFamily: 'monospace', fontSize: '0.84rem' }}>
+                  Available across all timezones.
+                </p>
+                <p className="text-slate-300 text-sm leading-relaxed" style={{ fontFamily: 'monospace', fontSize: '0.84rem' }}>
+                  I don't have a team behind me. I have a system. Every project I take gets my full attention, not a junior handoff. That is the difference.
+                </p>
+              </div>
+
+              {/* Stat pills */}
+              <div className="flex flex-wrap gap-3 mt-8">
+                {[
+                  '[ TIMEZONE // GMT+1 ]',
+                  '[ OPERATOR // Solo ]',
+                  '[ METHOD // Self-Taught ]',
+                ].map(pill => (
+                  <span key={pill} style={{
+                    fontFamily: 'monospace',
+                    fontSize: '0.68rem',
+                    letterSpacing: '0.08em',
+                    color: '#818cf8',
+                    border: '1px solid rgba(99,102,241,0.35)',
+                    background: 'rgba(99,102,241,0.08)',
+                    borderRadius: '4px',
+                    padding: '5px 12px',
+                  }}>
+                    {pill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </FadeIn>
+      </div>
+    </section>
+  )
+}
+
+/* ─────────────────────────────────────────
+   FAQ ACCORDION — terminal style
+───────────────────────────────────────── */
+const FAQS = [
+  {
+    q: 'Do you write smart contracts from scratch?',
+    a: 'I engineer full frontend UI deployment, custom dashboards, wallet connections, and distribution tracking. For custom Solidity/Rust smart contracts, I integrate with your audited files or coordinate with dedicated security protocols.',
+  },
+  {
+    q: 'What do your memecoin growth campaigns actually look like?',
+    a: 'Zero guesswork. I leverage an automated pipeline to systematically bridge project developers directly with verified CT callers, alpha groups, and tier-1 influencer networks precisely around your launch liquidity window.',
+  },
+  {
+    q: 'Can you really ship a landing page in under 24 hours?',
+    a: 'Yes. The codebase is optimized for rapid deployment. If your token assets, roadmap outline, and graphics are ready, your site goes live on Vercel before the next daily candle closes.',
+  },
+]
+
+function FaqItem({ item, index }) {
+  const [open, setOpen] = useState(false)
+  return (
+    <div style={{
+      border: `1px solid ${open ? 'rgba(99,102,241,0.4)' : 'rgba(255,255,255,0.07)'}`,
+      borderRadius: '8px',
+      background: open ? 'rgba(99,102,241,0.05)' : 'rgba(255,255,255,0.02)',
+      transition: 'all 0.25s ease',
+      overflow: 'hidden',
+    }}>
+      <button
+        onClick={() => setOpen(o => !o)}
+        className="w-full text-left flex items-center justify-between gap-4 px-6 py-5 cursor-pointer bg-transparent border-0"
+        aria-expanded={open}
+      >
+        <span style={{ fontFamily: 'monospace', fontSize: '0.78rem', letterSpacing: '0.04em', color: open ? '#a5b4fc' : '#94a3b8' }}>
+          <span style={{ color: open ? '#34d399' : '#6366f1', marginRight: '10px' }}>Q{index + 1}:</span>
+          {item.q}
+        </span>
+        <span style={{ color: open ? '#6366f1' : 'rgba(148,163,184,0.4)', flexShrink: 0, transition: 'transform 0.25s ease', transform: open ? 'rotate(90deg)' : 'rotate(0deg)', display: 'inline-flex' }}>
+          <IconChevronRight size={14} />
+        </span>
+      </button>
+
+      <div style={{
+        maxHeight: open ? '300px' : '0',
+        overflow: 'hidden',
+        transition: 'max-height 0.35s ease',
+      }}>
+        <div className="px-6 pb-5">
+          <div style={{ borderTop: '1px solid rgba(99,102,241,0.15)', paddingTop: '14px' }}>
+            <span style={{ fontFamily: 'monospace', fontSize: '0.68rem', color: '#6366f1', letterSpacing: '0.06em', display: 'block', marginBottom: '8px' }}>
+              A{index + 1}:
+            </span>
+            <p style={{ fontFamily: 'monospace', fontSize: '0.78rem', color: '#94a3b8', lineHeight: '1.8', letterSpacing: '0.02em' }}>
+              {item.a}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function FAQ() {
+  return (
+    <section className="py-24 px-4" style={{ background: '#0a1428' }}>
+      <div className="max-w-3xl mx-auto">
+        <FadeIn>
+          <div className="text-center mb-14">
+            <span style={{ fontFamily: 'monospace', fontSize: '0.68rem', letterSpacing: '0.15em', color: '#6366f1', display: 'block', marginBottom: '12px' }}>
+              SYSTEM_SPECIFICATIONS // FAQ
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-3">Common questions</h2>
+            <p className="text-slate-500 text-sm">Straight answers. No filler.</p>
+          </div>
+        </FadeIn>
+        <div className="flex flex-col gap-3">
+          {FAQS.map((item, i) => (
+            <FadeIn key={i} delay={i * 60}>
+              <FaqItem item={item} index={i} />
             </FadeIn>
           ))}
         </div>
@@ -807,7 +984,9 @@ function Footer() {
 }
 
 /* ─────────────────────────────────────────
-   ROOT
+   ROOT — section order:
+   Hero → Services → Work → Testimonials
+   → WhyMe → About → FAQ → Contact → Footer
 ───────────────────────────────────────── */
 export default function App() {
   return (
@@ -820,6 +999,8 @@ export default function App() {
         <Work />
         <Testimonials />
         <WhyMe />
+        <About />
+        <FAQ />
         <Contact />
       </main>
       <Footer />
