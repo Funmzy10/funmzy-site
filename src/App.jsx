@@ -135,7 +135,7 @@ function Navbar() {
     setTimeout(() => document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }), 80)
   }
 
-  const links = [['Services', 'services'], ['Work', 'work'], ['About', 'about'], ['Contact', 'contact']]
+  const links = [['Services', 'services'], ['Work', 'work'], ['Videos', 'videos'], ['Contact', 'contact']]
 
   return (
     <>
@@ -413,6 +413,18 @@ function Services() {
    CASE STUDIES
 ───────────────────────────────────────── */
 const CASES = [
+  {
+    tag: 'Live Site',
+    tagStyle: { background: 'rgba(16,185,129,0.12)', color: '#34d399', borderColor: 'rgba(16,185,129,0.2)' },
+    title: 'Frieden Richard — Client Website',
+    problem: 'Client needed a professional personal website built and deployed quickly.',
+    solution: 'Designed and built a full React frontend, deployed live on Vercel.',
+    result: 'Delivered and live. Client took the site to their audience with zero revisions needed.',
+    metrics: [{ val: 'Live', label: 'Deployed on Vercel' }, { val: 'Fast', label: 'Quick turnaround' }],
+    link: 'https://friedenrichard.vercel.app',
+    linkLabel: 'View Live Site',
+    tech: ['React', 'Vite', 'Tailwind CSS'],
+  },
   {
     tag: 'Live Site',
     tagStyle: { background: 'rgba(16,185,129,0.12)', color: '#34d399', borderColor: 'rgba(16,185,129,0.2)' },
@@ -771,16 +783,16 @@ function About() {
 ───────────────────────────────────────── */
 const FAQS = [
   {
-    q: 'Do you write smart contracts from scratch?',
-    a: 'I engineer full frontend UI deployment, custom dashboards, wallet connections, and distribution tracking. For custom Solidity/Rust smart contracts, I integrate with your audited files or coordinate with dedicated security protocols.',
+    q: 'How fast can you deliver a landing page or website?',
+    a: 'In less than 72 hours. If your assets, content, and branding are ready, your site goes live on Vercel fast. Every page is fully deployed, mobile-responsive, and handed over ready to share. This works for crypto projects and local businesses alike.',
   },
   {
-    q: 'What do your memecoin growth campaigns actually look like?',
-    a: 'Zero guesswork. I leverage an automated pipeline to systematically bridge project developers directly with verified CT callers, alpha groups, and tier-1 influencer networks precisely around your launch liquidity window.',
+    q: 'What kind of AI videos and UGC content do you create?',
+    a: '30-60 second AI avatar videos and UGC-style content with scripted hooks, clear narratives, and CTAs. They look real, get shared, and drive engagement across CT, TikTok, Instagram, YouTube, and Telegram. Perfect for product promos, token launches, and brand awareness.',
   },
   {
-    q: 'Can you really ship a landing page in under 24 hours?',
-    a: 'Yes. The codebase is optimized for rapid deployment. If your token assets, roadmap outline, and graphics are ready, your site goes live on Vercel before the next daily candle closes.',
+    q: 'What does your marketing and growth service include?',
+    a: 'Full campaign coordination: CT caller placements, alpha group drops, influencer outreach, and community growth systems. Everything is planned around your launch window and goals, with real reach that moves numbers, not vanity metrics.',
   },
 ]
 
@@ -1067,8 +1079,6 @@ export default function App() {
         <Work />
         <VideoGallery />
         <Testimonials />
-        <WhyMe />
-        <About />
         <FAQ />
         <Contact />
       </main>
