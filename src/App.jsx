@@ -433,7 +433,7 @@ const CASES = [
     solution: 'Engineered a full React/Vite frontend — dark navy design, scroll animations, mobile-responsive, deployed on Vercel.',
     result: 'Live in under 24 hours. Already generating inbound client inquiries.',
     metrics: [{ val: '<24hr', label: 'Build to deploy' }, { val: '9.4/10', label: 'Design score' }],
-    link: 'https://funmzy-site.vercel.app',
+    link: 'https://funmzyjobsite.vercel.app',
     linkLabel: 'View Live Site',
     tech: ['React', 'Vite', 'Tailwind CSS'],
   },
