@@ -533,6 +533,68 @@ function Work() {
 }
 
 /* ─────────────────────────────────────────
+   VIDEO GALLERY — proof of work
+───────────────────────────────────────── */
+const VIDEO_IDS = [
+  '19zJwkVnGA5XBd7O_-m02ez7aow9nY3mO',
+  '18XEZSRlqfF16zH9j_qHbtt3KmGMbhn36',
+  '1VPdJvsvMu4Gl3DoWCuricnf9ljhvn-34',
+  '1KCliQtgqD8W8qS22lmAVrJZO-xFVaVq3',
+  '1gqpOVa1KV7qmpsSjWJ71XK5EgqPTqsyI',
+]
+
+function VideoGallery() {
+  const [featured, ...rest] = VIDEO_IDS
+  return (
+    <section id="videos" className="py-24 px-4" style={{ background: '#050c1a' }}>
+      <div className="max-w-6xl mx-auto">
+        <FadeIn>
+          <div className="text-center mb-16">
+            <span className="text-xs font-bold uppercase tracking-widest text-blue-400 mb-3 block">AI Video Work</span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-4">Watch the work in action</h2>
+            <p className="text-slate-400 text-lg">Real videos. Produced and delivered for real clients.</p>
+          </div>
+        </FadeIn>
+
+        {/* Featured video — full width */}
+        <FadeIn>
+          <div className="rounded-2xl overflow-hidden mb-5"
+            style={{ border: '1px solid rgba(99,102,241,0.2)', boxShadow: '0 0 40px rgba(99,102,241,0.08)', background: '#07101f' }}>
+            <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}>
+              <iframe
+                src={`https://drive.google.com/file/d/${featured}/preview`}
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none', borderRadius: '16px' }}
+                allow="autoplay"
+                title="Featured video"
+              />
+            </div>
+          </div>
+        </FadeIn>
+
+        {/* 2×2 grid for remaining 4 */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+          {rest.map((id, i) => (
+            <FadeIn key={id} delay={i * 80}>
+              <div className="rounded-2xl overflow-hidden"
+                style={{ border: '1px solid rgba(255,255,255,0.07)', background: '#07101f' }}>
+                <div style={{ position: 'relative', paddingBottom: '56.25%', height: 0 }}>
+                  <iframe
+                    src={`https://drive.google.com/file/d/${id}/preview`}
+                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', border: 'none' }}
+                    allow="autoplay"
+                    title={`Video ${i + 2}`}
+                  />
+                </div>
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ─────────────────────────────────────────
    TESTIMONIALS — verified real ones
 ───────────────────────────────────────── */
 const TESTIMONIALS = [
@@ -997,6 +1059,7 @@ export default function App() {
         <Hero />
         <Services />
         <Work />
+        <VideoGallery />
         <Testimonials />
         <WhyMe />
         <About />
