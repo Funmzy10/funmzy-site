@@ -113,19 +113,6 @@ const IconChevronRight = ({ size = 16 }) => (
 )
 
 /* ─────────────────────────────────────────
-   ANNOUNCEMENT STRIP — scarcity + proof
-───────────────────────────────────────── */
-function AnnouncementStrip() {
-  return (
-    <div className="w-full py-2 px-4 text-center" style={{ background: 'linear-gradient(90deg, #2563eb, #7c3aed)' }}>
-      <p className="text-white font-bold uppercase tracking-widest text-xs">
-        2 slots open — June 2026. Last client went live in 18hrs.
-      </p>
-    </div>
-  )
-}
-
-/* ─────────────────────────────────────────
    NAVIGATION
 ───────────────────────────────────────── */
 function Navbar() {
@@ -541,6 +528,9 @@ const VIDEO_IDS = [
   '1VPdJvsvMu4Gl3DoWCuricnf9ljhvn-34',
   '1KCliQtgqD8W8qS22lmAVrJZO-xFVaVq3',
   '1gqpOVa1KV7qmpsSjWJ71XK5EgqPTqsyI',
+  '1yPRm0TdNVYJzRXZpyaQyZ8_MSPlAF6CV',
+  '1xgQAj9naspdGpVGFWBKaT1uGGE0sgqnT',
+  '12ULmB65R68mw1GilosR5a2J0CdHlufih',
 ]
 
 function VideoGallery() {
@@ -605,8 +595,8 @@ const TESTIMONIALS = [
     stars: 5,
   },
   {
-    quote: 'The AI avatar video content he produced drove real engagement for our brand. Professional quality, fast turnaround.',
-    author: 'Local Business Owner',
+    quote: 'His AI Videos and UGC Videos looks so real and brought in customers to buy from me.',
+    author: 'Shoe Brand',
     role: 'AI Video Client',
     stars: 5,
   },
@@ -884,6 +874,11 @@ function ContactForm() {
     e.preventDefault()
     const errs = validate()
     if (Object.keys(errs).length) { setErrors(errs); return }
+    const subject = encodeURIComponent(`New project inquiry from ${form.name}`)
+    const body = encodeURIComponent(
+      `Name: ${form.name}\nContact: ${form.contact}\nService: ${form.service || 'Not specified'}\n\nMessage:\n${form.message}`
+    )
+    window.open(`mailto:lionrage10@gmail.com?subject=${subject}&body=${body}`, '_self')
     setSubmitted(true)
   }
 
@@ -907,8 +902,20 @@ function ContactForm() {
         style={{ background: 'rgba(99,102,241,0.12)' }}>
         <IconCheck size={28} />
       </div>
-      <h3 className="text-white text-xl font-bold mb-2">Message received.</h3>
-      <p className="text-slate-400 text-sm">I'll hit you back within 24 hours. Telegram is fastest.</p>
+      <h3 className="text-white text-xl font-bold mb-2">Almost there.</h3>
+      <p className="text-slate-400 text-sm mb-6">Your email app should have opened with the message ready to send. Prefer something faster? Reach me directly:</p>
+      <div className="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="https://t.me/Funmzydasilva" target="_blank" rel="noopener noreferrer"
+          className="inline-flex items-center justify-center gap-2 text-white font-bold px-6 py-3 rounded-xl text-sm cursor-pointer"
+          style={{ background: 'linear-gradient(135deg, #2563eb, #7c3aed)' }}>
+          <IconTelegram size={15} /> Message on Telegram
+        </a>
+        <a href="https://x.com/Lionrage10" target="_blank" rel="noopener noreferrer"
+          className="inline-flex items-center justify-center gap-2 text-slate-300 hover:text-white font-semibold px-6 py-3 rounded-xl text-sm cursor-pointer"
+          style={{ border: '1px solid rgba(255,255,255,0.12)' }}>
+          <IconX size={15} /> DM on X
+        </a>
+      </div>
     </div>
   )
 
@@ -1053,7 +1060,6 @@ function Footer() {
 export default function App() {
   return (
     <div style={{ background: '#07101f', minHeight: '100vh' }}>
-      <AnnouncementStrip />
       <Navbar />
       <main>
         <Hero />
